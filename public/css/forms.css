@@ -1,0 +1,87 @@
+.form-control {
+    margin: 1rem 0;
+}
+
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.container-from {
+    display: flex;
+    justify-content: center;
+
+}
+
+.product-form {
+    width: 300px;
+}
+
+.form-control input,
+.form-control textarea {
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 2px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    outline-color: #00695c;
+}
+
+.max-500 {
+    display: block;
+    max-width: 400px;
+}
+
+
+
+
+.container-formulario {
+    max-width: 500px;
+    padding: 25px 40px;
+    margin-top: 20px;
+    background-color: #efefef;
+}
+
+.auth-form {
+
+    padding: 20px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    padding: 10px;
+    text-align: center;
+}
+
+.logged-in-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.logged-in-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.user-id {
+    font-size: 24px;
+    font-weight: bold;
+}

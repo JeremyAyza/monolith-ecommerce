@@ -1,0 +1,60 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main>
+
+
+    <h1 class=" titulo-form">Odalia Ecommerce</h1>
+    <p class="centered" style="padding: 0 20px;">Descubre tu estilo único con Odalia, donde la elegancia se encuentra con la moda y la belleza se refleja en cada prenda.</p>
+    <br>
+    <% if (products.length> 0) { %>
+    <div class="grid">
+      <% for (let product of products) { %>
+      <article class="card product-item">
+        <header class="card__header">
+          <h1 class="product__title">
+            <%= product.title %>
+          </h1>
+        </header>
+        <div class="card__image">
+          <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+        </div>
+        <div class="card__content">
+          <h2 class="product__price">
+            S/ <%= product.price %>
+          </h2>
+          <p class="product__description">
+            <% if (product.description.length > 75) { %>
+            <%= product.description.slice(0, 75) + '...' %>
+            <% } else { %>
+            <%= product.description %>
+            <% } %>
+          </p>
+
+          <p class="product__stock">
+            <br>
+            Stock: <%= product.stock %>
+          </p>
+        </div>
+        <div class="card__actions ">
+          <a href="/products/<%= product.id %>" class="btn">Detalles</a>
+          <% if (product.stock>=1) { %>
+          <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+
+          <% } else { %>
+			    <span style="padding: 5px 10px; margin: 5px 10px;">No Stock</span>
+          <% } %>
+        </div>
+
+      </article>
+      <% } %>
+    </div>
+    <% } else { %>
+    <h1>No Products Found!</h1>
+    <% } %>
+  </main>
+  <%- include('../includes/end.ejs') %>

@@ -1,0 +1,65 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="/css/table.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <main>
+    <% if (orders.length> 0) { %>
+    <br>
+    <h2>Tus Pedidos:</h2>
+    <br>
+    <% orders.forEach(order=> { %>
+    <% if (order.orderItems.length> 0) { %>
+
+		<h3 class="titulo-form">Pedido N° <%= order.id %></h3>
+    <table>
+      <tbody>
+				<tr>
+          <td>Pedido N°:</td>
+          <td><%= order.id %></td>
+        </tr>
+        <% order.orderItems.forEach((item,i)=> { %>
+
+					<tr>
+						<td>Item N°:</td>
+						<td><%= i+1%></td>
+					</tr>
+        <tr>
+          <td>Nombre del producto:</td>
+          <td><%= item.title %></td>
+        </tr>
+        <tr>
+          <td>Precio:</td>
+          <td><%= item.price %></td>
+        </tr>
+        <tr>
+          <td>Canitdad:</td>
+          <td><%= item.qty %></td>
+        </tr>
+        <tr>
+          <td>Subtotal:</td>
+          <td><%= item.subtotal %></td>
+        </tr>
+        
+
+
+
+        <% }) %>
+				<tr><td></td><td></td></tr>
+				<td>Total</td>
+        <td><%= order.total %></td>
+      </tbody>
+    </table>
+
+
+    <% } else { %>
+    <h3>No hay pedidos</h3>
+    <% } %>
+    <% }) %>
+    <% } else { %>
+    <h4>No hay pedidos</h4>
+    <% } %>
+  </main>
+  <%- include('../includes/end.ejs') %>

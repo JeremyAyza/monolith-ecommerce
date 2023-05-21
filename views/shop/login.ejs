@@ -1,0 +1,46 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="container-formulario">
+	<h2 class="titulo-form">Iniciar Sesión</h2>
+
+    <% if (errorMessage) { %>
+      <p class="error-message">
+        <%= errorMessage %>
+      </p>
+    <% } %>
+
+    <% if (user) { %>
+      <div class="logged-in-container">
+        <% if (user?.name) { %>
+          <div class="user-name">Bienvenido <%= user.name %>!</div>
+        <%  } %>
+        <form class="logout-form" action="/logout" method="POST">
+          <button class="btn" type="submit">Cerrar sesión</button>
+        </form>
+      </div>
+    <% } else { %>
+      <form class="auth-form max-500" action="/login" method="POST">
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="email" required name="email" id="email">
+        </div>
+        <div class="form-control">
+          <label for="password">Contraseña</label>
+          <input type="password" required name="password" id="password">
+        </div>
+
+        <div class="card__actions">
+			<button class="btn" type="submit">Iniciar sesión</button>        
+        	<a class="btn" href="/register">Registrarse</a>
+		</div>
+      </form>
+    <% } %>
+  </main>
+
+<%- include('../includes/end.ejs') %>
