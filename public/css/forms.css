@@ -30,7 +30,7 @@
 
 .form-control input:focus,
 .form-control textarea:focus {
-    outline-color: #00695c;
+    outline-color: var(--color-fucia--);
 }
 
 .max-500 {
@@ -59,9 +59,7 @@
 
 
 
-.button:hover {
-    background-color: #45a049;
-}
+
 
 .error-message {
     color: red;

@@ -3,7 +3,7 @@ exports.get404Error = (req, res, next) => {
 
   // Using Pug template engine
   res.status(404).render("404", {
-    pageTitle: "Page Not Found",
+    pageTitle: "Pagina no encontrada - 404",
     path: "/admin",
   });
 };

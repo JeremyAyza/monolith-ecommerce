@@ -4,6 +4,7 @@ const path = require("path");
 const cookieParser = require('cookie-parser');
 //RUTAS
 const adminRoutes = require("./routes/admin");
+const dataRoutes= require("./routes/data")
 const shopRoutes = require("./routes/shop");
 const errorsController = require("./controllers/errors");
 
@@ -32,6 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //LLAMANDO RUTAS
 app.use("/admin", isAdmin,adminRoutes);
+app.use("/api", dataRoutes);
 app.use(shopRoutes);
 app.use(errorsController.get404Error);
 

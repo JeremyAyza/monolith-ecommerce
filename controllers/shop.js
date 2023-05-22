@@ -222,8 +222,9 @@ exports.getOrders = async (req, res, next) => {
 				}
 			]
 		});
+		
 		//res.json(orders)
-		res.render("shop/orders", {
+		await res.render("shop/orders", {
 			pageTitle: "Tus Pedidos",
 			path: "/",
 			orders: orders

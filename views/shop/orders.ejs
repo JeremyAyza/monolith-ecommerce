@@ -22,14 +22,19 @@
         </tr>
         <% order.orderItems.forEach((item,i)=> { %>
 
-					<tr>
+				<tr>
 						<td>Item N°:</td>
 						<td><%= i+1%></td>
-					</tr>
+				</tr>
         <tr>
-          <td>Nombre del producto:</td>
-          <td><%= item.title %></td>
+            <td>Nombre del producto:</td>
+            <% if (item.product) { %>
+              <td><%= item.product.title %></td>
+            <% } else { %>
+              <td>Ya no disponible</td>
+            <% } %>
         </tr>
+          
         <tr>
           <td>Precio:</td>
           <td><%= item.price %></td>

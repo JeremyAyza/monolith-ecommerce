@@ -1,16 +1,45 @@
 <%- include('../includes/head.ejs') %>
 <link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/slider.css">
+
+
 </head>
 
 <body>
   <%- include('../includes/navigation.ejs') %>
 
   <main>
-
-
-    <h1 class=" titulo-form">Odalia Ecommerce</h1>
+    <h1 class=" titulo-form ">Odalia Ecommerce</h1>
     <p class="centered" style="padding: 0 20px;">Descubre tu estilo único con Odalia, donde la elegancia se encuentra con la moda y la belleza se refleja en cada prenda.</p>
     <br>
+      <div class="a-flex">
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slider-item">
+              <img src="/imgs/S1.jpeg" alt="Slider Image 1">
+            </div>
+            <div class="slider-item">
+              <img src="/imgs/S2.jpeg" alt="Slider Image 2">
+            </div>
+            <div class="slider-item">
+              <img src="/imgs/S3.webp" alt="Slider Image 3">
+            </div>
+            <div class="slider-item">
+              <img src="/imgs/S4.jpeg" alt="Slider Image 4">
+            </div>
+            <div class="slider-item">
+              <img src="/imgs/S5.jpeg" alt="Slider Image 4">
+            </div>
+          </div>
+          <div class="slider-nav">
+            <button class="prev-button">⬅</button>
+            <button class="next-button">➡</button>
+          </div>
+        </div>
+      </div>
+    <br>
+
     <% if (products.length> 0) { %>
     <div class="grid">
       <% for (let product of products) { %>
@@ -57,4 +86,28 @@
     <h1>No Products Found!</h1>
     <% } %>
   </main>
+
+
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="footer__logo">
+        <img src="/images/logo.png" alt="Odalia Ecommerce">
+      </div>
+      <div class="footer__info">
+        <p class="footer__description">Descubre tu estilo único con Odalia, donde la elegancia se encuentra con la moda y la belleza se refleja en cada prenda.</p>
+        <p class="footer__address">Dirección: 123 Calle Principal, Ciudad, País</p>
+      </div>
+      
+      <div class="footer__social">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy">© 2023 Odalia Ecommerce. Todos los derechos reservados.</p>
+  </footer>
+  
   <%- include('../includes/end.ejs') %>
