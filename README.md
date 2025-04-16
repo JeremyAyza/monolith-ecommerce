@@ -56,4 +56,16 @@
 - [x] Variables de entorno seguras con `.env` para configuraciones sensibles
 - [x] Middleware y herramientas como `cookie-parser`, `morgan`, y `dotenv`
 
+---
+
+## .env
+
+```bash
+DB_USER=root
+DB_NAME=tienda_DB
+DB_PASSWORD=
+DB_HOST=localhost
+PORT=4000
+DIALECT=mysql
+```
 
